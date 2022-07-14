@@ -1,29 +1,27 @@
 function computerPlay() {
-    randomPlay = Math.random()*3;
-    if (randomPlay <= 1){
-        return 'Rock';
-    } else if (randomPlay > 1 && randomPlay <= 2){
-        return 'Paper';
+    let randomPlay = Math.random()*3;
+    if (randomPlay <= 1) {
+        return 'rock';
+    } else if (randomPlay > 1 && randomPlay <= 2) {
+        return 'paper';
     } else {
-        return 'Scissors';
+        return 'scissors';
     }
 }
 
 function playerPlay() {
-    playerSelection = prompt('Enter your play: ');
-    while (playerSelection.toLowerCase() != 'rock' && 
-           playerSelection.toLowerCase() != 'paper' && 
-           playerSelection.toLowerCase() != 'scissors') {
-        playerSelection = prompt('You typed correcty (Rock, Paper or Scissors): ');
+    let playerSelection = prompt('Enter your play (Rock, Paper or Scissors): ');
+    playerSelection = playerSelection.toLowerCase();
+    while (playerSelection != 'rock' && 
+           playerSelection != 'paper' && 
+           playerSelection != 'scissors') {
+        playerSelection = prompt('You typed incorrectly. Please try again: Rock, Paper or Scissors: ');
     }
     return playerSelection
 }
 
 function playRound(playerSelection, computerSelection) {
-    console.log(`You selected ${playerSelection}`);
-    console.log(`Computer selected ${computerSelection}`);
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+    console.log(`You selected ${playerSelection} and the computer selected ${computerSelection}`);
     if (playerSelection == 'rock' && computerSelection == 'paper') {
         return 'You lose! Paper beats Rock'
     } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
@@ -45,16 +43,12 @@ function game() {
     let playerPoint = 0;
     let computerPoint = 0;
     for (let i = 0; i < 5; i++) {
-        const playerSelection = playerPlay();
-        const computerSelection = computerPlay();
-        result = playRound(playerSelection, computerSelection);
+        let result = playRound(playerPlay(), computerPlay());
         console.log(result);
         if (result.slice(0,5) == 'You w') {
             playerPoint++;
         } else if (result.slice(0,5) == 'You l') {
             computerPoint++;
-        } else if (result.slice(0,5) == 'Draw') {
-            playerPoint +0;
         }
     }
     if (playerPoint > computerPoint) {
