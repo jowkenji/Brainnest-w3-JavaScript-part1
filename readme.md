@@ -4,3 +4,4 @@ It is a rock paper scissors game. You have to use the DevTool console to view th
 
 Link: https://jowkenji.github.io/Brainnest-w3-JavaScript-part1/
 
+The graphic version is available here: https://jowkenji.github.io/Brainnest-w3-JavaScript-part1/graphic-version/game.html
