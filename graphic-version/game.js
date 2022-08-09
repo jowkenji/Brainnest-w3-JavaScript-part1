@@ -82,6 +82,7 @@ function partialResult(result) {
             let finalMessage = `It's a draw! ${playerPoint} - ${computerPoint}`;
             round.textContent = finalMessage;
         }
+        document.getElementById('command').style.visibility = "hidden";
     }
 }
 
@@ -116,6 +117,7 @@ start.addEventListener('click', () => {  // apaga a tela inicial e inicia a tela
         roundNumber = 1;
 
         document.getElementById('main').style.visibility = "visible";
+        document.getElementById('command').style.visibility = "visible";
         round.textContent = `Round ${roundNumber}`;
         start.textContent = `Reset`;
         roundResult.textContent = ``;
