@@ -106,6 +106,8 @@ let playerPoint;
 let computerPoint;
 let landmark = 0;
 
+console.log("Sw loaded!");
+
 start.addEventListener('click', () => {  // apaga a tela inicial e inicia a tela de jogo (placar, round, opções)
     if (landmark == 0) {
         console.log('Inicio!');
