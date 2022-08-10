@@ -1,34 +1,34 @@
 function computerPlay() {
     let randomPlay = Math.random()*3;
     if (randomPlay <= 1) {
-        computerMove.removeChild(computerMove.lastChild);
-
+        if (computerMove.hasChildNodes()) {
+            computerMove.removeChild(computerMove.lastChild);
+        } 
         let image1 = document.createElement('img');
         const attr = document.createAttribute('src');
         attr.value = "./images/rock-right.png";
         image1.setAttributeNode(attr);
         computerMove.appendChild(image1);
-        
         return 'rock';
     } else if (randomPlay > 1 && randomPlay <= 2) {
-        computerMove.removeChild(computerMove.lastChild);
-
+        if (computerMove.hasChildNodes()) {
+            computerMove.removeChild(computerMove.lastChild);
+        }
         let image1 = document.createElement('img');
         const attr = document.createAttribute('src');
         attr.value = "./images/paper-right.png";
         image1.setAttributeNode(attr);
         computerMove.appendChild(image1);
-        
         return 'paper';
     } else {
-        computerMove.removeChild(computerMove.lastChild);
-
+        if(computerMove.hasChildNodes()) {
+            computerMove.removeChild(computerMove.lastChild);
+        }
         let image1 = document.createElement('img');
         const attr = document.createAttribute('src');
         attr.value = "./images/scissors-right.png";
         image1.setAttributeNode(attr);
         computerMove.appendChild(image1);
-        
         return 'scissors';
     }
 }
@@ -87,11 +87,7 @@ function partialResult(result) {
 }
 
 const start = document.querySelector('.start');
-const logo = document.querySelector('.logo');
 const round = document.querySelector('#round');
-const roundContainer = document.querySelector('#roundContainer');
-const h1 = document.querySelector('h1');
-const initial = document.querySelector('.initial');
 const roundResult = document.querySelector('.roundResult');
 const optionPaper = document.querySelector('#paper');
 const optionRock = document.querySelector('#rock');
@@ -130,6 +126,7 @@ start.addEventListener('click', () => {  // apaga a tela inicial e inicia a tela
         document.getElementById('play1').style.visibility = "hidden";
         document.getElementById('play2').style.visibility = "hidden";
         document.getElementById('main').style.visibility = "hidden";
+        document.getElementById('command').style.visibility = "hidden";
         landmark = 0;
     }
 })
@@ -141,7 +138,9 @@ optionPaper.addEventListener('click', () => { // aciona a jogada com papel
         partialResult(result);
         roundNumber++;
 
-        playerPlay.removeChild(playerPlay.lastChild);
+        if (playerPlay.hasChildNodes()) {
+            playerPlay.removeChild(playerPlay.lastChild);
+        }
 
         let image = document.createElement('img');
         const attr = document.createAttribute('src');
@@ -158,7 +157,9 @@ optionRock.addEventListener('click', () => { // aciona a jogada com pedra
         partialResult(result);
         roundNumber++;
         
-        playerPlay.removeChild(playerPlay.lastChild);
+        if (playerPlay.hasChildNodes()) {
+            playerPlay.removeChild(playerPlay.lastChild);
+        }
 
         let image = document.createElement('img');
         const attr = document.createAttribute('src');
@@ -175,7 +176,9 @@ optionScissors.addEventListener('click', () => { // aciona a jogada com tesoura
         partialResult(result);
         roundNumber++;
 
-        playerPlay.removeChild(playerPlay.lastChild);
+        if (playerPlay.hasChildNodes()) {
+            playerPlay.removeChild(playerPlay.lastChild);
+        }
 
         let image = document.createElement('img');
         const attr = document.createAttribute('src');

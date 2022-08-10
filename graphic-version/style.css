@@ -1,5 +1,6 @@
 * {
     background-color: aquamarine;
+    font-family: 'DynaPuff', cursive;
     /* border: 1px solid red; */
 }
 
@@ -11,7 +12,7 @@ header {
 h1 {
     display: flex;
     align-content: center;
-    font-size: 55px;
+    font-size: 50px;
     /* border: 1px solid red; */
 }
 
@@ -35,6 +36,10 @@ main, #play1, #play2 {
     width: 50vw;
     max-width: 450px;
     flex: 1;
+}
+
+.start:active {
+    background-color: blue;
 }
 
 .initial > figure > img {
@@ -61,7 +66,7 @@ main, #play1, #play2 {
 }
     
 .play {
-    font-size: 40px;
+    font-size: 35px;
     /* border: 1px solid red; */
     min-width: 280px;
 }
@@ -76,7 +81,7 @@ main, #play1, #play2 {
 .roundResult {
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 35px;
     /* border: 1px solid red; */
 }
 
@@ -95,3 +100,7 @@ main, #play1, #play2 {
     /* border: 1px solid red; */
 }
 
+.option:active {
+    background-color: rgba(50, 50, 255, 0.85);
+    border-radius: 20%;
+}
