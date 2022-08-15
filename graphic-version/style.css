@@ -1,106 +1,153 @@
+/* ===== Document style ===== */
+
 * {
     background-color: aquamarine;
     font-family: 'DynaPuff', cursive;
-    /* border: 1px solid red; */
 }
 
-header {
+/* ===== Display ===== */
+
+header,
+.round,
+.result,
+.roundResult,
+.playerCommand {
     display: flex;
     justify-content: center;
 }
 
-h1 {
+h1,
+.initial,
+.player,
+.computer {
     display: flex;
     align-content: center;
-    font-size: 50px;
-    /* border: 1px solid red; */
 }
 
-main, #play1, #play2 {
-    visibility: hidden;
-}
-
-.initial {
-    /* border: 1px solid red; */
-    display: flex;
+.initial,
+.player,
+.computer {
     flex-direction: column;
-    align-items: center;
 }
 
+/* ===== Margins ===== */
+figure {
+    margin: 0px;
+}
+
+.playerCommand p {
+    margin-right: 20px;
+}
+
+/* ===== Buttons and Images ===== */
 .start {
     background-color: red;
     border: 3px solid black;
     border-radius: 15px;
     color: yellow;
-    font-size: 40px;
     width: 50vw;
     max-width: 450px;
     flex: 1;
+}
+
+.initial > figure > img { /* logo disabled */
+    /* border: 1px solid red; */
+    /* max-width: 100vw;
+    width: 600px; */
+}
+
+.play > figure > img {
+    display: block;
+    height: 400px;
+    max-height: 24vh;
+}
+
+.player {
+    min-width: 262px;
+    margin-right: 5px;
+}
+
+.computer {
+    min-width: 262px;
+    margin-left: 5px;
+}
+
+.option {
+    max-height: 140px;
+}
+
+/* ====== Text style ====== */
+
+h1 {
+    font-size: 3em;
+}
+
+.start,
+.round > p {
+    font-size: 2.5em;
+}
+
+.result,
+.playerCommand p,
+.play,
+.roundResult {
+    font-size: 2.2em;
+}
+
+.play p {
+    font-size: 2.2rem;
+}
+
+/* ===== Actions ===== */
+
+.option:active {
+    background-color: rgba(50, 50, 255, 0.85);
+    border-radius: 20%;
 }
 
 .start:active {
     background-color: blue;
 }
 
-.initial > figure > img {
-    /* border: 1px solid red; */
-    max-width: 100vw;
-    width: 600px;
+/* ===== Visibility ===== */
+
+main, #play1, #play2 {
+    visibility: hidden;
 }
 
-.round {
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid red; */
+@media all and (max-width: 580px) {
+    * {
+        font-size: 12px;
+    }
+    .option {
+        max-height: 90px;
+    }
+    figure.playerPlay > img, figure.computerPlay > img {
+        max-height: 200px;
+    }
+    .play p {
+        font-size: 2.0rem;
+    }
+    .player, .computer {
+        min-width: 147px;
+    }
 }
 
-.round > p {
-    /* border: 1px solid red; */
-    font-size: 40px;
-}
-
-.result {
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid red; */
-}
+@media all and (max-width: 420px) {
+    * {
+        font-size: 9px;
+    }
     
-.play {
-    font-size: 35px;
-    /* border: 1px solid red; */
-    min-width: 280px;
-}
-
-.play > figure > img {
-    display: block;
-    /* border: 1px solid red; */
-    height: 400px;
-    max-height: 20vh;
-}
-
-.roundResult {
-    display: flex;
-    justify-content: center;
-    font-size: 35px;
-    /* border: 1px solid red; */
-}
-
-.playerCommand {
-    display: flex;
-    justify-content: center;
-    /* border: 1px solid red; */
-}
-
-.playerCommand p {
-    font-size: 35px;
-}
-
-.option {
-    max-height: 100px;
-    /* border: 1px solid red; */
-}
-
-.option:active {
-    background-color: rgba(50, 50, 255, 0.85);
-    border-radius: 20%;
+    .option {
+        max-height: 60px;
+    }
+    figure.playerPlay > img, figure.computerPlay > img {
+        max-height: 100px;
+    }
+    .play p {
+        font-size: 2.0rem;
+    }
+    .player, .computer {
+        min-width: 147px;
+    }
 }
