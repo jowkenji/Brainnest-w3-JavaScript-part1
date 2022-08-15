@@ -17,11 +17,15 @@ header,
 }
 
 h1,
-.initial,
 .player,
 .computer {
     display: flex;
     align-content: center;
+}
+
+.initial {
+    display: flex;
+    align-items: center;
 }
 
 .initial,
